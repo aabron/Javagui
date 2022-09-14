@@ -1,0 +1,187 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ChoiceBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.MenuBar?>
+<?import javafx.scene.control.Tab?>
+<?import javafx.scene.control.TabPane?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.shape.Rectangle?>
+<?import javafx.scene.text.Font?>
+
+<VBox prefHeight="400.0" prefWidth="640.0" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.javagui.PrimaryController">
+  <children>
+    <MenuBar prefHeight="67.0" prefWidth="640.0" style="-fx-background-color: white;" VBox.vgrow="NEVER" />
+    <AnchorPane maxHeight="-1.0" maxWidth="-1.0" prefHeight="-1.0" prefWidth="-1.0" style="-fx-background-color: #00A5AD;" VBox.vgrow="ALWAYS">
+      <children>
+            <TabPane layoutY="-1.0" prefHeight="375.0" prefWidth="640.0" style="-fx-background-color: white;" tabClosingPolicy="UNAVAILABLE">
+              <tabs>
+                <Tab text="Content">
+                  <content>
+                    <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="323.0" prefWidth="640.0">
+                           <children>
+                              <TextField layoutX="25.0" layoutY="64.0" fx:id="xtaField" />
+                              <TextField fx:id="robotField" layoutX="25.0" layoutY="107.0" />
+                              <TextField fx:id="zoneField" layoutX="25.0" layoutY="155.0" />
+                              <TextField fx:id="nameField" layoutX="27.0" layoutY="202.0" />
+                              <TextField fx:id="customerNameField" layoutX="24.0" layoutY="250.0" prefHeight="25.0" prefWidth="150.0" />
+                              <TextField fx:id="projectField" layoutX="177.0" layoutY="64.0" />
+                              <TextField fx:id="toolNumberField" layoutX="178.0" layoutY="107.0" />
+                              <Button layoutX="53.0" layoutY="296.0" mnemonicParsing="false" onAction="#writeBasicInfo" style="-fx-background-color: black;" text="Write to Sheet" textFill="WHITE">
+                                 <font>
+                                    <Font name="ArtifaktElement-Regular" size="12.0" />
+                                 </font></Button>
+                              <Button fx:id="addComponent" layoutX="377.0" layoutY="282.0" mnemonicParsing="false" onAction="#addComponent" style="-fx-background-color: black;" text="Add Component" textFill="WHITE">
+                                 <font>
+                                    <Font name="ArtifaktElement-Regular" size="12.0" />
+                                 </font></Button>
+                              <Label layoutX="132.0" layoutY="23.0" text="Basic Information" />
+                              <Label layoutX="441.0" layoutY="23.0" text="Add Component" />
+                              <TextField fx:id="fdField" layoutX="410.0" layoutY="64.0" />
+                              <TextField fx:id="partNumberField" layoutX="410.0" layoutY="107.0" />
+                              <TextField fx:id="manufacturerField" layoutX="410.0" layoutY="155.0" />
+                              <TextField fx:id="startConditionField" layoutX="411.0" layoutY="202.0" />
+                              <Button layoutX="193.0" layoutY="295.0" mnemonicParsing="false" onAction="#handle" style="-fx-background-color: black;" text="Choose Excel Sheet" textFill="WHITE">
+                                 <font>
+                                    <Font name="ArtifaktElement-Regular" size="12.0" />
+                                 </font></Button>
+                              <TextField fx:id="sheetField" layoutX="177.0" layoutY="155.0" />
+                              <TextField fx:id="stationField" layoutX="178.0" layoutY="202.0" />
+                              <Label layoutX="138.0" layoutY="5.0" text="(if you dont need to fill in a specific field just type &quot;NULL&quot; into the field)" />
+                              <TextField fx:id="machineDescriptionField" layoutX="176.0" layoutY="250.0" />
+                              <Label layoutX="89.0" layoutY="47.0" text="XTA" />
+                              <Label layoutX="207.0" layoutY="47.0" />
+                              <Label layoutX="83.0" layoutY="93.0" text="Robot" />
+                              <Label layoutX="216.0" layoutY="93.0" text="Tool Number" />
+                              <Label layoutX="85.0" layoutY="141.0" text="Zone" />
+                              <Label layoutX="206.0" layoutY="141.0" text="Sheet( AutoFills)" />
+                              <Label layoutX="83.0" layoutY="188.0" text="Name" />
+                              <Label layoutX="230.0" layoutY="188.0" text="Station" />
+                              <Label layoutX="196.0" layoutY="235.0" text="Machine Description" />
+                              <Label layoutX="60.0" layoutY="235.0" text="Customer name" />
+                              <Label layoutX="203.0" layoutY="47.0" text="Project # or Name" />
+                              <Label layoutX="430.0" layoutY="47.0" text="Function Description" />
+                              <Label layoutX="451.0" layoutY="93.0" text="Part Number" />
+                              <Label layoutX="449.0" layoutY="141.0" text="Manufacturer" />
+                              <Label layoutX="446.0" layoutY="188.0" text="Start Condition" />
+                              <Label layoutX="391.0" layoutY="235.0" text="Choose Component From Database" />
+                              <Button layoutX="486.0" layoutY="282.0" mnemonicParsing="false" onAction="#runUpdate" style="-fx-background-color: black;" text="Update Dropdown" textFill="WHITE">
+                                 <font>
+                                    <Font name="ArtifaktElement-Regular" size="12.0" />
+                                 </font>
+                              </Button>
+                              <ChoiceBox fx:id="choiceBoxDatabase" layoutX="410.0" layoutY="250.0" prefWidth="150.0" />
+                              <Button fx:id="addComponent1" layoutX="388.0" layoutY="319.0" mnemonicParsing="false" onAction="#addComponentFromDatabase" style="-fx-background-color: black;" text="Add Component From Database" textFill="WHITE">
+                                 <font>
+                                    <Font name="ArtifaktElement-Regular" size="12.0" />
+                                 </font>
+                              </Button>
+                           </children>
+                        </AnchorPane>
+                  </content>
+                </Tab>
+                <Tab text="Sequence">
+                  <content>
+                    <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                           <children>
+                              <ChoiceBox fx:id="componentDropdown" layoutX="14.0" layoutY="14.0" prefWidth="150.0" />
+                              <Button layoutX="223.0" layoutY="63.0" mnemonicParsing="false" onAction="#handleChooseComponentButton" style="-fx-background-color: black;" text="Choose Component" textFill="WHITE">
+                                 <font>
+                                    <Font name="ArtifaktElement-Regular" size="12.0" />
+                                 </font></Button>
+                              <Label fx:id="componentInformation" layoutX="36.0" layoutY="123.0" text="No Component Information!" visible="false" />
+                              <Label layoutX="430.0" layoutY="18.0" text="Add a Sequence Event" />
+                              <TextField fx:id="functionDescriptionField" layoutX="414.0" layoutY="63.0" />
+                              <ChoiceBox fx:id="componentStateDropdown" layoutX="414.0" layoutY="142.0" prefWidth="150.0" />
+                              <Button fx:id="addEventButton" layoutX="454.0" layoutY="185.0" mnemonicParsing="false" onAction="#addEvent" style="-fx-background-color: black;" text="Add Event" textFill="WHITE">
+                                 <font>
+                                    <Font name="ArtifaktElement-Regular" size="12.0" />
+                                 </font></Button>
+                              <Label layoutX="434.0" layoutY="115.0" text="State Of Component" />
+                              <Button layoutX="206.0" layoutY="14.0" mnemonicParsing="false" onAction="#readExcel" style="-fx-background-color: black;" text="Populate Components List" textFill="WHITE">
+                                 <font>
+                                    <Font name="ArtifaktElement-Regular" size="12.0" />
+                                 </font></Button>
+                              <Label fx:id="componentInformation1" alignment="CENTER" layoutX="36.0" layoutY="93.0" prefHeight="17.0" prefWidth="152.0" text="No Component Information!" visible="false" />
+                              <Label fx:id="componentInformation2" alignment="CENTER" layoutX="112.0" layoutY="176.0" prefHeight="17.0" prefWidth="152.0" text="No Component Information!" />
+                              <Label layoutX="436.0" layoutY="49.0" text="Function Description" />
+                           </children>
+                        </AnchorPane>
+                  </content>
+                </Tab>
+                  <Tab text="Change">
+                     <content>
+                        <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                           <children>
+                              <TextField fx:id="changeNameField" layoutX="245.0" layoutY="84.0" />
+                              <TextField fx:id="changeCompanyField" layoutX="245.0" layoutY="137.0" />
+                              <TextField fx:id="changeDateField" layoutX="244.0" layoutY="190.0" />
+                              <TextField fx:id="changeDescriptionField" layoutX="244.0" layoutY="245.0" prefHeight="25.0" prefWidth="149.0" />
+                              <Label layoutX="283.0" layoutY="38.0" text="Add a change" />
+                              <Button layoutX="279.0" layoutY="298.0" mnemonicParsing="false" onAction="#addChange" style="-fx-background-color: black;" text="Add Change" textFill="WHITE" />
+                              <Label layoutX="290.0" layoutY="67.0" text="Your Name" />
+                              <Label layoutX="294.0" layoutY="120.0" text="Company" />
+                              <Label layoutX="306.0" layoutY="173.0" text="Date" />
+                              <Label layoutX="260.0" layoutY="228.0" text="Description Of Change" />
+                           </children></AnchorPane>
+                     </content>
+                  </Tab>
+                  <Tab text="Tooling layout">
+                     <content>
+                        <AnchorPane fx:id="layoutPane" minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                           <children>
+                              <Label layoutX="16.0" layoutY="115.0" text="Selected component Image:" />
+                              <Button layoutX="4.0" layoutY="26.0" mnemonicParsing="false" onAction="#handleImage" style="-fx-background-color: black;" text="Upload Image of Component" textFill="WHITE" />
+                              <Rectangle arcHeight="5.0" arcWidth="5.0" fill="WHITE" height="319.0" layoutX="207.0" layoutY="17.0" scaleZ="0.0" stroke="BLACK" strokeType="INSIDE" width="426.0" />
+                              <Button layoutX="3.0" layoutY="72.0" mnemonicParsing="false" onAction="#exportImage" style="-fx-background-color: black;" text="Export Layout to SpreadSheet" textFill="WHITE" />
+                              <Pane fx:id="imagePane" layoutX="213.0" layoutY="24.0" prefHeight="308.0" prefWidth="415.0" />
+                           </children>
+                        </AnchorPane>
+                     </content>
+                  </Tab>
+                  <Tab text="Add Component To Database">
+                     <content>
+                        <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                           <children>
+                              <Button layoutX="230.0" layoutY="14.0" mnemonicParsing="false" onAction="#database" style="-fx-background-color: black;" text="Add to Component Database" textFill="WHITE">
+                                 <font>
+                                    <Font name="ArtifaktElement-Regular" size="12.0" />
+                                 </font>
+                              </Button>
+                              <TextField fx:id="unitNoDB" layoutX="245.0" layoutY="72.0" />
+                              <TextField fx:id="changeLevelDB" layoutX="36.0" layoutY="70.0" />
+                              <TextField fx:id="panelReferenceDB" layoutX="245.0" layoutY="128.0" />
+                              <TextField fx:id="functionDescriptionDB" layoutX="452.0" layoutY="71.0" />
+                              <Label layoutX="97.0" layoutY="105.0" />
+                              <Label layoutX="299.0" layoutY="47.0" text="Unit No" />
+                              <Label layoutX="277.0" layoutY="105.0" text="Panel Referance" />
+                              <Label layoutX="474.0" layoutY="47.0" text="Function Description" />
+                              <Label layoutX="75.0" layoutY="47.0" text="Change Level" />
+                              <TextField fx:id="partNumberFieldDB" layoutX="36.0" layoutY="126.0" />
+                              <Label layoutX="77.0" layoutY="103.0" text="Part Number" />
+                              <TextField fx:id="toolManufacturerDB" layoutX="245.0" layoutY="183.0" />
+                              <Label layoutX="271.0" layoutY="160.0" text="Tool Manufacturer" />
+                              <TextField fx:id="CylinderBoreDB" layoutX="454.0" layoutY="126.0" />
+                              <Label layoutX="490.0" layoutY="103.0" text="Cylinder Bore" />
+                              <TextField fx:id="openAngleDB" layoutX="36.0" layoutY="183.0" />
+                              <Label layoutX="79.0" layoutY="160.0" text="Open Angle" />
+                              <TextField fx:id="integralBrakeDB" layoutX="454.0" layoutY="241.0" />
+                              <Label layoutX="490.0" layoutY="216.0" text="Integral Brake" />
+                              <TextField fx:id="sensorTypeDB" layoutX="454.0" layoutY="182.0" />
+                              <Label layoutX="494.0" layoutY="160.0" text="Sensor Type" />
+                              <TextField fx:id="switchNumberDB" layoutX="36.0" layoutY="239.0" />
+                              <Label layoutX="70.0" layoutY="216.0" text="Switch Number" />
+                           </children>
+                        </AnchorPane>
+                     </content>
+                  </Tab>
+              </tabs>
+            </TabPane>
+      </children>
+    </AnchorPane>
+  </children>
+</VBox>
